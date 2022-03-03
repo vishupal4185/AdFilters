@@ -1,0 +1,54 @@
+! Title: My personal DNS Blocklist for AdGuard
+
+! Google APIs
+||www.googleadservices.com^
+||geomobileservices-pa.googleapis.com^
+||app-measurement.com^
+||userlocation.googleapis.com^
+||crashlyticsreports-pa.googleapis.com^
+||reminders-pa.googleapis.com^
+||cryptauthenrollment.googleapis.com^
+||adservice.google.com^
+||id.google.com^
+||s.youtube.com^
+
+! Facebook
+||web.facebook.com^
+||connect.facebook.net^
+||graph.facebook.com^
+
+! Other
+||api2.branch.io^
+||app.adjust.com^
+||^
+
+! WPS Office
+||cloudservice14.kingsoft-office-service.com^
+||cloudservice24.kingsoft-office-service.com^
+||plugin-server.wps.com^
+||movip.wps.com^
+
+! Amazon
+||unagi-na.amazon.com^
+||unagi.amazon.in^
+||aax-eu.amazon.in^
+||unagi.amazon.fr^
+||fls-eu.amazon.in^
+
+! Truecaller
+||edge-locations5-noneu.truecaller.com^
+||ads-router-noneu.truecaller.com^
+||ads-partner-noneu.truecaller.com^
+
+
+||^
+||^
+||^
+||^
+||^
+||^
+||^
+||^
+||^
+||^
+||^
