@@ -1,8 +1,10 @@
 ! Title: My personal DNS Blocklist for AdGuard
 
 ! Google APIs
-||www.googleadservices.com^
+||googleadservices.com^$important
 ||geomobileservices-pa.googleapis.com^
+||firebaseinstallations.googleapis.com^
+||imasdk.googleapis.com^
 ||app-measurement.com^
 ||userlocation.googleapis.com^
 ||crashlyticsreports-pa.googleapis.com^
@@ -50,7 +52,12 @@
 ||ads-router-noneu.truecaller.com^
 ||ads-partner-noneu.truecaller.com^
 
+! MX Player
+||evt.mxplay.com^
+||androidc.mxplay.com^
+||i.mxplayer.j2inter.com^
 
+||^
 ||^
 ||^
 ||^
