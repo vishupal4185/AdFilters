@@ -9,6 +9,7 @@
 ||reminders-pa.googleapis.com^
 ||cryptauthenrollment.googleapis.com^
 ||adservice.google.com^
+||fonts.googleapis.com^
 ||id.google.com^
 ||s.youtube.com^
 
@@ -16,6 +17,20 @@
 ||web.facebook.com^
 ||connect.facebook.net^
 ||graph.facebook.com^
+
+! Microsoft
+||settings-win.data.microsoft.com^
+
+! Amazon
+||unagi-na.amazon.com^
+||unagi.amazon.in^
+||aax-eu.amazon.in^
+||unagi.amazon.fr^
+||fls-eu.amazon.in^
+
+! Mozilla
+||incoming.telemetry.mozilla.org^
+||content-signature-2.cdn.mozilla.net^
 
 ! Other
 ||api2.branch.io^
@@ -27,13 +42,8 @@
 ||cloudservice24.kingsoft-office-service.com^
 ||plugin-server.wps.com^
 ||movip.wps.com^
+||wdl1.pcfg.cache.wpscdn.com^
 
-! Amazon
-||unagi-na.amazon.com^
-||unagi.amazon.in^
-||aax-eu.amazon.in^
-||unagi.amazon.fr^
-||fls-eu.amazon.in^
 
 ! Truecaller
 ||edge-locations5-noneu.truecaller.com^
@@ -41,10 +51,6 @@
 ||ads-partner-noneu.truecaller.com^
 
 
-||^
-||^
-||^
-||^
 ||^
 ||^
 ||^
