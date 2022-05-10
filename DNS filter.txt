@@ -3,7 +3,7 @@
 ! Google APIs
 ||googleadservices.com^$important
 ||geomobileservices-pa.googleapis.com^
-||firebaseinstallations.googleapis.com^
+||firebaseinstallations.googleapis.com^$important
 ||imasdk.googleapis.com^
 ||app-measurement.com^
 ||userlocation.googleapis.com^
@@ -37,7 +37,7 @@
 ! Other
 ||api2.branch.io^
 ||app.adjust.com^
-||^
+||exappupgrade.vivoglobal.com^
 
 ! WPS Office
 ||cloudservice14.kingsoft-office-service.com^
@@ -57,6 +57,26 @@
 ||androidc.mxplay.com^
 ||i.mxplayer.j2inter.com^
 
+||dns.google^
+||www.googletagmanager.com^
+
+||edge.activity.windows.com^
+||activity.windows.com^
+||ecn.dev.virtualearth.net^
+||c.bing.com^
+
+||pc-mon-va.byteoversea.com^
+||vmweb-sg.byteoversea.com^
+
+||sb.scorecardresearch.com^
+
+||^
+||^
+||^
+||^
+||^
+||^
+||^
 ||^
 ||^
 ||^
