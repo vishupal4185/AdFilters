@@ -1,39 +1,18 @@
 ! Title: My personal Blocklist for AdGuard
 
-pornmd.com###listResultContainer > div.suggestions-container:first-child > div.suggestions-box:first-child
-@@||in-tpl.adiquity.com^$important,document
-@@||techcpl.com^$important,document
-ebooksandhandwrittennotes.blogspot.com###HTML2
+
 @@||scstwelfare.delhigovt.nic.in^$important,document
 @@||classroom.google.com^$important,document
 jiosaavn.com##.c-promo
-@@||e.informer.com^$important,document
-@@||chrome.google.com^$important,document
-allen.ac.in###myModal
 jiosaavn.com###root > div.home.banner:last-child > aside.c-player.disabled:nth-child(8) > div.c-banner.active:last-child > div.c-banner__content:last-child
 @@||ntaneet.nic.in^$important,document
 @@||jeemain.nta.nic.in^$important,document
-@@||aporasal.net^$important,document
 @@||wap.lfj.io^$important,document
-wynk.in##ngb-modal-backdrop.fade.modal-backdrop.show:nth-child(18)
-wynk.in##ngb-modal-backdrop.fade.modal-backdrop.show:nth-child(21)
-wynk.in##ngb-modal-backdrop.fade.modal-backdrop.show:nth-child(22)
 @@||selfregistration.cowin.gov.in^$important,document
-imgtaxi.com##div:nth-child(13)
-@@||voting.voot.com^$important,document
-@@||checkhoro.com^$important,document
 @@||vimoviesandtv.in^$important,document
 quora.com###root > div:last-child > div.q-box > div.q-box > div.q-flex.qu-alignItems--center.qu-justifyContent--center.qu-overflow--hidden.qu-zIndex--blocking_wall:first-child
 @@||login.blockchain.com^$important,document
-@@||eu-browse.startpage.com^$important,document
 @@||wallet.uphold.com^$important,document
-@@||yoshare.net^$important,document
-@@||www.expressvpn.com^$important,document
-@@||coveryourtracks.eff.org^$important,document
-@@||firstpartysimulator.net^$important,document
-@@||firstpartysimulator.org^$important,document
-@@||www.virustotal.com^$important,document
-@@||www.voot.com^$important,document
 gaana.com###right-side-ad
 @@||temp-mail.org^$important,document
 youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer.forceConsent, false)
@@ -42,39 +21,20 @@ youtube.com##+js(json-prune, topbar.desktopTopbarRenderer.interstitial.consentBu
 youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 youtube.com##ytd-rich-grid-row:style(--ytd-rich-grid-items-per-row: 1 !important;)
 youtube.com##ytd-rich-grid-row>#contents, ytd-rich-grid-row ytd-rich-grid-media:style(max-width: unset !important;)
-@@||theporndude.com^$important,document
-@@||distrotest.net^$important,document
-@@||www.blockadblock.com^$important,document
 youtube.com###chat
-https://www.masttram.com/wp-content/uploads/2021/10/Free-Iphone-11pro-4.png$domain=masttram.com
-@@||gujarati.news18.com^$important,document
-@@||hindi.news18.com^$important,document
-pornhub.org###js-networkBar
-https://sohot.cyou/gif20.gif
-https://i.imgur.com/NpF21gu.gif
-xhamster18.desi###player-container > div.xplayer-banner:nth-child(5)
-xhamster18.desi##.wio-xplayer, .wio-xspot-container
-apkonline.net###parenthomexx
 facebook.com###mount_0_0_Tt > div:nth-child(2) > div:first-child > div.rq0escxv.l9j0dhe7.du4w35lb > div.rq0escxv.l9j0dhe7.du4w35lb:nth-child(5) > div.du4w35lb.l9j0dhe7.cbu4d94t.j83agx80 > div.j83agx80.cbu4d94t.l9j0dhe7.jgljxmt5.be9z9djy > div.j83agx80.cbu4d94t.d6urw2fd.dp1hu0rb.l9j0dhe7.du4w35lb:first-child > div:nth-child(2) > div.hybvsw6c.i09qtzwb.rlt63pii.rq0escxv.i3j981x3.d1544ag0.m7u2wfa4.tw6a2znq.poy2od1o.j9ispegn.k4urcfbm.asf1osic > div.l9j0dhe7.du4w35lb.rq0escxv.j83agx80.cbu4d94t.pfnyh3mw.d2edcug0 > div.rq0escxv.l9j0dhe7.du4w35lb.j83agx80.cbu4d94t.buofh1pr.tgvbjcpo
 facebook.com###mount_0_0_Tt > div:nth-child(2) > div:first-child > div.rq0escxv.l9j0dhe7.du4w35lb > div.rq0escxv.l9j0dhe7.du4w35lb:nth-child(5) > div.du4w35lb.l9j0dhe7.cbu4d94t.j83agx80 > div.j83agx80.cbu4d94t.l9j0dhe7.jgljxmt5.be9z9djy > div.j83agx80.cbu4d94t.d6urw2fd.dp1hu0rb.l9j0dhe7.du4w35lb:first-child > div:nth-child(2) > div.hybvsw6c.i09qtzwb.rlt63pii.rq0escxv.i3j981x3.d1544ag0.m7u2wfa4.tw6a2znq.poy2od1o.j9ispegn.k4urcfbm.asf1osic
-@@||bikayi.com^$important,document
-@@||www.uwatchfree.fo^$important,document
-@@||fancentro.com^$important,document
+
 1337x.to##main.container:nth-child(4) > div.row > div.col-9.page-content.search-page:last-child > div.box-info > center:first-child
 1337x.to##main.container:nth-child(4) > div.row > div.col-9.page-content.search-page:last-child > div.box-info > center:nth-child(6)
-@@||www22.movierulzfree.is^$important,document
 @@||drive.google.com^$important,document
 sxyprn.net##.cbd
 reddit.com##a[href^="/rpan/"] > h3:has-text(/Top (livestream|broadcast)/):upward(7)
 reddit.com###INBOX--TOOLTIP > div._3fRnnkCBwqAZG6nmxhTKHr > div._3oNU8Gzy2V3jDPhFfeEFbD > div._2MId4QR3fPm4RPlrSTZg_E:nth-child(2) > div._2prSjBmU3TS_Liup8DFR-2:first-child
 reddit.com###SHORTCUT_FOCUSABLE_DIV > div:nth-child(4) > div._1nxEQl5D2Bx2jxDILRHemb > div > div.qYj03fU5CXf5t2Fc5iSvg.ListingLayout-outerContainer > div._3ozFtOe6WpJEMUtxDOIvtU:last-child > div._31N0dvxfpsO6Ur5AKx4O5d:last-child > div._1OVBBWLtHoSPfGCRaPzpTf._3nSp9cdBpqL13CqjdMr2L_._2OVNlZuUd8L9v0yVECZ2iA:first-child > div._3VqiDbufgl9_EiV_tk9L6u:first-child
-@@||bollywoodhindi.in^$important,document
 reddit.com###welcome-tooltip-id
 @@||192.168.1.1^$important,document
-@@||physicswallah.live^$stealth
-@@||physicswallah.live^$cookie
-@@||https://www.youtube.com/iframe_api^$stealth
-@@||physicswallah.live^$important,document
+
 
 
 ||^
