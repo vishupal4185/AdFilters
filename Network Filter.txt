@@ -35,6 +35,14 @@ reddit.com###SHORTCUT_FOCUSABLE_DIV > div:nth-child(4) > div._1nxEQl5D2Bx2jxDILR
 reddit.com###welcome-tooltip-id
 @@||192.168.1.1^$important,document
 
+@@||app.jumptask.io^$important,document
+chess.com###board-layout-sidebar > div.sidebar-component > div.tab-content-component:last-child > div.tab-container-component:first-child > div.quick-analysis-component.quick-analysis-narrow-sidebar.quick-analysis-with-game-review-popup:nth-child(3) > div.quick-analysis-results > div.quick-analysis-buttons:last-child > div.quick-analysis-review:first-child > div.game-review-overlay-overlay:first-child
+youtube.com###clarify-box > ytd-clarification-renderer.style-scope.ytd-watch-flexy
+@@||api.penpencil.xyz^$stealth,domain=physicswallah.live
+youtube.com###contents > ytd-rich-section-renderer.style-scope.ytd-rich-grid-renderer:nth-child(3)
+youtube.com###items > ytd-mini-guide-entry-renderer.style-scope.ytd-mini-guide-renderer:nth-child(3)
+
+
 
 
 ||^
