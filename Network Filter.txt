@@ -42,6 +42,15 @@ youtube.com###clarify-box > ytd-clarification-renderer.style-scope.ytd-watch-fle
 youtube.com###contents > ytd-rich-section-renderer.style-scope.ytd-rich-grid-renderer:nth-child(3)
 youtube.com###items > ytd-mini-guide-entry-renderer.style-scope.ytd-mini-guide-renderer:nth-child(3)
 
+www.reddit.com##header a[aria-label="Advertise"]
+www.reddit.com##[data-testid="frontpage-sidebar"] > div:first-child
+www.reddit.com##[data-testid="frontpage-sidebar"] > div:nth-child(2)
+www.reddit.com##[data-testid="frontpage-sidebar"] > div._2vEf-C2keJaBMY9qk_BxVn:has-text(Reddit Premium)
+www.reddit.com##[data-testid="frontpage-sidebar"] > div._2vEf-C2keJaBMY9qk_BxVn:has([data-before-content="advertisement"])
+www.reddit.com##._1oRQu-aolgpPPJDblUGTw5
+
+||*^$ping
+
 
 ||^
 ||^
