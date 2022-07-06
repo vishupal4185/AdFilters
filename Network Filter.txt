@@ -56,11 +56,11 @@ facebook.com##div[role=article] span:not(>*):has-text(/^Related discussions$/):u
 facebook.com##div[role=button] > span:not(>*):has-text(/related/i):upward(4)
 
 ! Removes FB's "Related discussions" panel [OPTION 2] (Uncomment below if the above solution breaks something. You can also try different numeric values inside upward, but going above 6 may break comments.):
-! facebook.com##div[role=article] span:not(>*):has-text(/^Related discussions$/):upward(5)
+facebook.com##div[role=article] span:not(>*):has-text(/^Related discussions$/):upward(5)
 ! Removes FB's "Related discussions" panel [OPTION 3]:
-! facebook.com##div[role=feed] > div span:not(>*):has-text(/^Related discussions$/):upward(span)
+facebook.com##div[role=feed] > div span:not(>*):has-text(/^Related discussions$/):upward(span)
 ! Removes FB's "Related discussions" panel [OPTION 4]:
-! facebook.com##div[role=feed] > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(2) > div > span > div > div:nth-child(2) > div > div > div > span:not(>*):has-text(/^Related discussions$/):upward(span)
+facebook.com##div[role=feed] > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(2) > div > span > div > div:nth-child(2) > div > div > div > span:not(>*):has-text(/^Related discussions$/):upward(span)
 
 ! Google consent, "before you continue"
 www.google.*##^script:has-text(consentCookiePayload)
