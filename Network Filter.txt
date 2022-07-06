@@ -1,20 +1,87 @@
 ! Title: My personal Blocklist for AdGuard
 
-
+! Exceptions
 @@||scstwelfare.delhigovt.nic.in^$important,document
 @@||classroom.google.com^$important,document
-jiosaavn.com##.c-promo
-jiosaavn.com###root > div.home.banner:last-child > aside.c-player.disabled:nth-child(8) > div.c-banner.active:last-child > div.c-banner__content:last-child
 @@||ntaneet.nic.in^$important,document
 @@||jeemain.nta.nic.in^$important,document
 @@||wap.lfj.io^$important,document
 @@||selfregistration.cowin.gov.in^$important,document
 @@||vimoviesandtv.in^$important,document
-quora.com###root > div:last-child > div.q-box > div.q-box > div.q-flex.qu-alignItems--center.qu-justifyContent--center.qu-overflow--hidden.qu-zIndex--blocking_wall:first-child
+@@||192.168.1.1^$important,document
+@@||app.jumptask.io^$important,document
+@@||api.penpencil.xyz^$stealth,domain=physicswallah.live|pw.live
 @@||login.blockchain.com^$important,document
 @@||wallet.uphold.com^$important,document
-gaana.com###right-side-ad
 @@||temp-mail.org^$important,document
+
+
+! Special Blocking
+
+||*^$ping
+$removeparam=ved,domain=google.*
+$removeparam=bp,domain=youtube.com
+! search.brave.com
+$removeparam=source,domain=search.brave.com
+
+! ecosia.org
+$removeparam=tt
+
+! Extra Blocking Rules
+! Facebook
+facebook.com###mount_0_0_Tt > div:nth-child(2) > div:first-child > div.rq0escxv.l9j0dhe7.du4w35lb > div.rq0escxv.l9j0dhe7.du4w35lb:nth-child(5) > div.du4w35lb.l9j0dhe7.cbu4d94t.j83agx80 > div.j83agx80.cbu4d94t.l9j0dhe7.jgljxmt5.be9z9djy > div.j83agx80.cbu4d94t.d6urw2fd.dp1hu0rb.l9j0dhe7.du4w35lb:first-child > div:nth-child(2) > div.hybvsw6c.i09qtzwb.rlt63pii.rq0escxv.i3j981x3.d1544ag0.m7u2wfa4.tw6a2znq.poy2od1o.j9ispegn.k4urcfbm.asf1osic > div.l9j0dhe7.du4w35lb.rq0escxv.j83agx80.cbu4d94t.pfnyh3mw.d2edcug0 > div.rq0escxv.l9j0dhe7.du4w35lb.j83agx80.cbu4d94t.buofh1pr.tgvbjcpo
+facebook.com###mount_0_0_Tt > div:nth-child(2) > div:first-child > div.rq0escxv.l9j0dhe7.du4w35lb > div.rq0escxv.l9j0dhe7.du4w35lb:nth-child(5) > div.du4w35lb.l9j0dhe7.cbu4d94t.j83agx80 > div.j83agx80.cbu4d94t.l9j0dhe7.jgljxmt5.be9z9djy > div.j83agx80.cbu4d94t.d6urw2fd.dp1hu0rb.l9j0dhe7.du4w35lb:first-child > div:nth-child(2) > div.hybvsw6c.i09qtzwb.rlt63pii.rq0escxv.i3j981x3.d1544ag0.m7u2wfa4.tw6a2znq.poy2od1o.j9ispegn.k4urcfbm.asf1osic
+
+! FB Sponsored posts - language-neutral solution / TEST version (dot selection) / Remove the `:style()` ending if no false positives found.
+facebook.com##[role="feed"] span[id] a[href="#"]:not(:has-text(/(\s|\d|^$)/)):upward([role="feed"]>div):style(border: 8px dotted yellow !important)
+! The 2 lines below are supplementary to the one above, but might be needed to make it work:
+facebook.com##[role="feed"] span[id] a[href="#"] :matches-css(display: none):remove()
+facebook.com##[role="feed"] span[id] a[href="#"] :matches-css(position: absolute):remove()
+
+! The "Paid for by" type of sponsored post:
+facebook.com##[role="feed"] span[id]>[role=button]:has-text(/^Sponsored|Paid for by/):upward([role="feed"]>div)
+! Probably unnecessary, but you can also try:
+facebook.com##[role="feed"] span[id] a[href^="/ads/about/"]:upward([role="feed"]>div)
+
+! Ads in right column
+facebook.com##div[role="complementary"] > div > div > div > div > div > span
+
+! Marketplace
+facebook.com##[aria-label*="Marketplace"] object > a[href^="/ads/"] > span:not(:empty):upward(11)
+facebook.com##[aria-label*="Marketplace"] object:has(> a[href^="/ads/"] > span:has-text(/^Sponsored$/)):upward(a):upward(3)
+
+! Removes FB's "Related discussions" panel:
+facebook.com##div[role=article] span:not(>*):has-text(/^Related discussions$/):upward(span)
+! FB - news and group feeds - related discussions - hide the "# related" link/button
+facebook.com##div[role=button] > span:not(>*):has-text(/related/i):upward(4)
+
+! Removes FB's "Related discussions" panel [OPTION 2] (Uncomment below if the above solution breaks something. You can also try different numeric values inside upward, but going above 6 may break comments.):
+! facebook.com##div[role=article] span:not(>*):has-text(/^Related discussions$/):upward(5)
+! Removes FB's "Related discussions" panel [OPTION 3]:
+! facebook.com##div[role=feed] > div span:not(>*):has-text(/^Related discussions$/):upward(span)
+! Removes FB's "Related discussions" panel [OPTION 4]:
+! facebook.com##div[role=feed] > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(2) > div > span > div > div:nth-child(2) > div > div > div > span:not(>*):has-text(/^Related discussions$/):upward(span)
+
+! Google consent, "before you continue"
+www.google.*##^script:has-text(consentCookiePayload)
+www.google.*##+js(acis, document.cookie, YES+)
+google.*##+js(aeld, DOMContentLoaded, CONSENT)
+
+! Reddit.com
+www.reddit.com##header a[aria-label="Advertise"]
+www.reddit.com##[data-testid="frontpage-sidebar"] > div:first-child
+www.reddit.com##[data-testid="frontpage-sidebar"] > div:nth-child(2)
+www.reddit.com##[data-testid="frontpage-sidebar"] > div._2vEf-C2keJaBMY9qk_BxVn:has-text(Reddit Premium)
+www.reddit.com##[data-testid="frontpage-sidebar"] > div._2vEf-C2keJaBMY9qk_BxVn:has([data-before-content="advertisement"])
+www.reddit.com##._1oRQu-aolgpPPJDblUGTw5
+reddit.com##a[href^="/rpan/"] > h3:has-text(/Top (livestream|broadcast)/):upward(7)
+reddit.com###INBOX--TOOLTIP > div._3fRnnkCBwqAZG6nmxhTKHr > div._3oNU8Gzy2V3jDPhFfeEFbD > div._2MId4QR3fPm4RPlrSTZg_E:nth-child(2) > div._2prSjBmU3TS_Liup8DFR-2:first-child
+reddit.com###SHORTCUT_FOCUSABLE_DIV > div:nth-child(4) > div._1nxEQl5D2Bx2jxDILRHemb > div > div.qYj03fU5CXf5t2Fc5iSvg.ListingLayout-outerContainer > div._3ozFtOe6WpJEMUtxDOIvtU:last-child > div._31N0dvxfpsO6Ur5AKx4O5d:last-child > div._1OVBBWLtHoSPfGCRaPzpTf._3nSp9cdBpqL13CqjdMr2L_._2OVNlZuUd8L9v0yVECZ2iA:first-child > div._3VqiDbufgl9_EiV_tk9L6u:first-child
+reddit.com###welcome-tooltip-id
+reddit.com##body:style(overflow: auto !important;)
+
+
+!YouTube
 youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer.forceConsent, false)
 youtube.com##+js(json-prune, [].response.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
 youtube.com##+js(json-prune, topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
@@ -22,25 +89,129 @@ youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.co
 youtube.com##ytd-rich-grid-row:style(--ytd-rich-grid-items-per-row: 1 !important;)
 youtube.com##ytd-rich-grid-row>#contents, ytd-rich-grid-row ytd-rich-grid-media:style(max-width: unset !important;)
 youtube.com###chat
+youtube.com###contents > ytd-rich-section-renderer.style-scope.ytd-rich-grid-renderer:nth-child(3)
+youtube.com###items > ytd-mini-guide-entry-renderer.style-scope.ytd-mini-guide-renderer:nth-child(3)
+youtube.com###clarify-box > ytd-clarification-renderer.style-scope.ytd-watch-flexy
+
+! YT consent
+youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer.forceConsent, false)
+youtube.com##+js(json-prune, [].response.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
+youtube.com##+js(json-prune, topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
+
+! Removes Mixes from the Main Page
+youtube.com##ytd-rich-item-renderer #video-title-link[title*="Mix"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
+! Removes Mixes from the right side panel
+youtube.com##ytd-compact-radio-renderer
+! Removes Mixes from search results
+youtube.com##ytd-radio-renderer
+
+! Removes "YouTube" (Music) playlists from the right side panel
+youtube.com##ytd-compact-playlist-renderer .ytd-channel-name:has-text(/^YouTube/):upward(ytd-compact-playlist-renderer)
+
+! YouTube shorts
+www.youtube.com###guide-content #endpoint[title="Shorts"]:upward(ytd-guide-entry-renderer)
+www.youtube.com###items #endpoint[title="Shorts"]:upward(ytd-mini-guide-entry-renderer)
+www.youtube.com##ytd-browse ytd-grid-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-browse ytd-rich-item-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-search ytd-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-browse ytd-grid-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-browse ytd-rich-item-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-search ytd-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+
+! music.youtube.com
+music.youtube.com##ytmusic-pivot-bar-item-renderer.ytmusic-pivot-bar-renderer.style-scope:nth-of-type(4)
+
+
+
+jiosaavn.com##.c-promo
+jiosaavn.com###root > div.home.banner:last-child > aside.c-player.disabled:nth-child(8) > div.c-banner.active:last-child > div.c-banner__content:last-child
+
+gaana.com###right-side-ad
+
+quora.com###root > div:last-child > div.q-box > div.q-box > div.q-flex.qu-alignItems--center.qu-justifyContent--center.qu-overflow--hidden.qu-zIndex--blocking_wall:first-child
+
+! Facebook
 facebook.com###mount_0_0_Tt > div:nth-child(2) > div:first-child > div.rq0escxv.l9j0dhe7.du4w35lb > div.rq0escxv.l9j0dhe7.du4w35lb:nth-child(5) > div.du4w35lb.l9j0dhe7.cbu4d94t.j83agx80 > div.j83agx80.cbu4d94t.l9j0dhe7.jgljxmt5.be9z9djy > div.j83agx80.cbu4d94t.d6urw2fd.dp1hu0rb.l9j0dhe7.du4w35lb:first-child > div:nth-child(2) > div.hybvsw6c.i09qtzwb.rlt63pii.rq0escxv.i3j981x3.d1544ag0.m7u2wfa4.tw6a2znq.poy2od1o.j9ispegn.k4urcfbm.asf1osic > div.l9j0dhe7.du4w35lb.rq0escxv.j83agx80.cbu4d94t.pfnyh3mw.d2edcug0 > div.rq0escxv.l9j0dhe7.du4w35lb.j83agx80.cbu4d94t.buofh1pr.tgvbjcpo
 facebook.com###mount_0_0_Tt > div:nth-child(2) > div:first-child > div.rq0escxv.l9j0dhe7.du4w35lb > div.rq0escxv.l9j0dhe7.du4w35lb:nth-child(5) > div.du4w35lb.l9j0dhe7.cbu4d94t.j83agx80 > div.j83agx80.cbu4d94t.l9j0dhe7.jgljxmt5.be9z9djy > div.j83agx80.cbu4d94t.d6urw2fd.dp1hu0rb.l9j0dhe7.du4w35lb:first-child > div:nth-child(2) > div.hybvsw6c.i09qtzwb.rlt63pii.rq0escxv.i3j981x3.d1544ag0.m7u2wfa4.tw6a2znq.poy2od1o.j9ispegn.k4urcfbm.asf1osic
 
+! FB Sponsored posts - language-neutral solution / TEST version (dot selection) / Remove the `:style()` ending if no false positives found.
+facebook.com##[role="feed"] span[id] a[href="#"]:not(:has-text(/(\s|\d|^$)/)):upward([role="feed"]>div):style(border: 8px dotted yellow !important)
+! The 2 lines below are supplementary to the one above, but might be needed to make it work:
+facebook.com##[role="feed"] span[id] a[href="#"] :matches-css(display: none):remove()
+facebook.com##[role="feed"] span[id] a[href="#"] :matches-css(position: absolute):remove()
+
+! The "Paid for by" type of sponsored post:
+facebook.com##[role="feed"] span[id]>[role=button]:has-text(/^Sponsored|Paid for by/):upward([role="feed"]>div)
+! Probably unnecessary, but you can also try:
+facebook.com##[role="feed"] span[id] a[href^="/ads/about/"]:upward([role="feed"]>div)
+
+! Ads in right column
+facebook.com##div[role="complementary"] > div > div > div > div > div > span
+
+
 1337x.to##main.container:nth-child(4) > div.row > div.col-9.page-content.search-page:last-child > div.box-info > center:first-child
 1337x.to##main.container:nth-child(4) > div.row > div.col-9.page-content.search-page:last-child > div.box-info > center:nth-child(6)
-@@||drive.google.com^$important,document
-sxyprn.net##.cbd
-reddit.com##a[href^="/rpan/"] > h3:has-text(/Top (livestream|broadcast)/):upward(7)
-reddit.com###INBOX--TOOLTIP > div._3fRnnkCBwqAZG6nmxhTKHr > div._3oNU8Gzy2V3jDPhFfeEFbD > div._2MId4QR3fPm4RPlrSTZg_E:nth-child(2) > div._2prSjBmU3TS_Liup8DFR-2:first-child
-reddit.com###SHORTCUT_FOCUSABLE_DIV > div:nth-child(4) > div._1nxEQl5D2Bx2jxDILRHemb > div > div.qYj03fU5CXf5t2Fc5iSvg.ListingLayout-outerContainer > div._3ozFtOe6WpJEMUtxDOIvtU:last-child > div._31N0dvxfpsO6Ur5AKx4O5d:last-child > div._1OVBBWLtHoSPfGCRaPzpTf._3nSp9cdBpqL13CqjdMr2L_._2OVNlZuUd8L9v0yVECZ2iA:first-child > div._3VqiDbufgl9_EiV_tk9L6u:first-child
-reddit.com###welcome-tooltip-id
-@@||192.168.1.1^$important,document
 
-@@||app.jumptask.io^$important,document
+sxyprn.net##.cbd
+
+
 chess.com###board-layout-sidebar > div.sidebar-component > div.tab-content-component:last-child > div.tab-container-component:first-child > div.quick-analysis-component.quick-analysis-narrow-sidebar.quick-analysis-with-game-review-popup:nth-child(3) > div.quick-analysis-results > div.quick-analysis-buttons:last-child > div.quick-analysis-review:first-child > div.game-review-overlay-overlay:first-child
-youtube.com###clarify-box > ytd-clarification-renderer.style-scope.ytd-watch-flexy
-@@||api.penpencil.xyz^$stealth,domain=physicswallah.live
-youtube.com###contents > ytd-rich-section-renderer.style-scope.ytd-rich-grid-renderer:nth-child(3)
-youtube.com###items > ytd-mini-guide-entry-renderer.style-scope.ytd-mini-guide-renderer:nth-child(3)
+
+! 2022-06-19 https://10hd.xyz
+10hd.xyz###comments
+
+! 2022-06-29 https://dood.pm
+dood.pm###vjs-logobrand-image-destination
+
+! 2022-06-15 https://www.porndish.com
+www.porndish.com##.g1-hb-shadow-off.g1-hb-sticky-on.g1-hb-boxed.g1-hb-row-3.g1-hb-row-c.g1-hb-row-normal.g1-hb-row.g1-row-layout-page.g1-row > .g1-row-inner > .g1-dropable.g1-column > .g1-bin-grow-off.g1-bin-1 > .g1-bin-align-left.g1-bin > [href="https://theporndude.com/"]
+www.porndish.com##.g1-hb-shadow-off.g1-hb-sticky-on.g1-hb-boxed.g1-hb-row-3.g1-hb-row-c.g1-hb-row-normal.g1-hb-row.g1-row-layout-page.g1-row > .g1-row-inner > .g1-dropable.g1-column > .g1-bin-grow-off.g1-bin-1 > .g1-bin-align-left.g1-bin > [href^="https://go.xlviiirdr.com"]
+
+! 2022-04-30 https://embedo.co
+embedo.co###bcedadbabbdb
+
+||popcash.net^$xhr,domain=upvizzz.xyz,redirect-rule=noop.txt
+reddit.com##a[href^="/rpan/"] > h3:has-text(/Top (livestream|broadcast)/):upward(7)
+
+! 2022-03-01 https://111.90.159.132
+111.90.159.132###secondary > .widget_custom_html.widget.widget_text
+
+! 2022-03-16 https://dashboard.honeygain.com
+dashboard.honeygain.com##.kYShXQ.sc-iELTvK
+
+! 2022-05-10 https://fast.com
+fast.com##.logo-container
+fast.com##.powered-by-container
+
+
+
+
+! Rule Dumped
+
+! Brave
+||popcash.net^$xhr,domain=upvizzz.xyz,redirect-rule=noop.txt
+reddit.com##a[href^="/rpan/"] > h3:has-text(/Top (livestream|broadcast)/):upward(7)
+
+! 2022-03-01 https://111.90.159.132
+111.90.159.132###secondary > .widget_custom_html.widget.widget_text
+
+! 2022-03-16 https://dashboard.honeygain.com
+dashboard.honeygain.com##.kYShXQ.sc-iELTvK
+
+
+! search.brave.com
+$removeparam=source,domain=search.brave.com
+$removeparam=is_fallback_api_available
+$removeparam=origin
+
+! ecosia.org
+$removeparam=tt
+
+! 2022-05-10 https://fast.com
+fast.com##.logo-container
+fast.com##.powered-by-container
 
 www.reddit.com##header a[aria-label="Advertise"]
 www.reddit.com##[data-testid="frontpage-sidebar"] > div:first-child
@@ -51,15 +222,94 @@ www.reddit.com##._1oRQu-aolgpPPJDblUGTw5
 
 ||*^$ping
 
+! 2022-05-18 https://www.twitch.tv
+www.twitch.tv##.front-page-carousel.glKbrp.Layout-sc-nxg1ff-0
 
-||^
-||^
-||^
-||^
-||^
-||^
-||^
-||^
-||^
-||^
-||^
+$removeparam=ved,domain=google.*
+$removeparam=bp,domain=youtube.com
+
+@@||local.adguard.com^
+
+! 2022-06-08 https://music.youtube.com
+music.youtube.com##ytmusic-pivot-bar-item-renderer.ytmusic-pivot-bar-renderer.style-scope:nth-of-type(4)
+
+! 2022-06-28 https://in.mail.yahoo.com
+in.mail.yahoo.com##.I_ZnwrMC.p_R.o_v.D_F
+
+! YouTube shorts
+www.youtube.com###guide-content #endpoint[title="Shorts"]:upward(ytd-guide-entry-renderer)
+www.youtube.com###items #endpoint[title="Shorts"]:upward(ytd-mini-guide-entry-renderer)
+www.youtube.com##ytd-browse ytd-grid-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-browse ytd-rich-item-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-search ytd-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-browse ytd-grid-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-browse ytd-rich-item-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-search ytd-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+
+! Chrome
+! 2022-04-30 https://embedo.co
+embedo.co###bcedadbabbdb
+
+||popcash.net^$xhr,domain=upvizzz.xyz,redirect-rule=noop.txt
+reddit.com##a[href^="/rpan/"] > h3:has-text(/Top (livestream|broadcast)/):upward(7)
+
+! 2022-03-01 https://111.90.159.132
+111.90.159.132###secondary > .widget_custom_html.widget.widget_text
+
+! 2022-03-16 https://dashboard.honeygain.com
+dashboard.honeygain.com##.kYShXQ.sc-iELTvK
+
+! 2022-05-10 https://fast.com
+fast.com##.logo-container
+fast.com##.powered-by-container
+
+
+! search.brave.com
+$removeparam=source,domain=search.brave.com
+$removeparam=is_fallback_api_available
+$removeparam=origin
+
+! ecosia.org
+$removeparam=tt
+
+
+www.reddit.com##header a[aria-label="Advertise"]
+www.reddit.com##[data-testid="frontpage-sidebar"] > div:first-child
+www.reddit.com##[data-testid="frontpage-sidebar"] > div:nth-child(2)
+www.reddit.com##[data-testid="frontpage-sidebar"] > div._2vEf-C2keJaBMY9qk_BxVn:has-text(Reddit Premium)
+www.reddit.com##[data-testid="frontpage-sidebar"] > div._2vEf-C2keJaBMY9qk_BxVn:has([data-before-content="advertisement"])
+www.reddit.com##._1oRQu-aolgpPPJDblUGTw5
+
+! 2022-06-13 https://sbembed.com
+sbembed.com##.jw-reset.jw-hide.jw-logo-top-right.jw-logo
+
+! 2022-06-15 https://www.porndish.com
+www.porndish.com##.g1-hb-shadow-off.g1-hb-sticky-on.g1-hb-boxed.g1-hb-row-3.g1-hb-row-c.g1-hb-row-normal.g1-hb-row.g1-row-layout-page.g1-row > .g1-row-inner > .g1-dropable.g1-column > .g1-bin-grow-off.g1-bin-1 > .g1-bin-align-left.g1-bin > [href="https://theporndude.com/"]
+www.porndish.com##.g1-hb-shadow-off.g1-hb-sticky-on.g1-hb-boxed.g1-hb-row-3.g1-hb-row-c.g1-hb-row-normal.g1-hb-row.g1-row-layout-page.g1-row > .g1-row-inner > .g1-dropable.g1-column > .g1-bin-grow-off.g1-bin-1 > .g1-bin-align-left.g1-bin > [href^="https://go.xlviiirdr.com"]
+
+! 2022-06-19 https://10hd.xyz
+10hd.xyz###comments
+
+! 2022-06-29 https://dood.pm
+dood.pm###vjs-logobrand-image-destination
+
+! YouTube shorts
+www.youtube.com###guide-content #endpoint[title="Shorts"]:upward(ytd-guide-entry-renderer)
+www.youtube.com###items #endpoint[title="Shorts"]:upward(ytd-mini-guide-entry-renderer)
+www.youtube.com##ytd-browse ytd-grid-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-browse ytd-rich-item-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-search ytd-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-browse ytd-grid-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-browse ytd-rich-item-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-search ytd-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+
+! Firefox
+
+
+
+
+
