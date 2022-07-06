@@ -309,6 +309,35 @@ www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-ren
 
 ! Firefox
 
+! AdGuard
+@@||app.jumptask.io^$important,document
+chess.com###board-layout-sidebar > div.sidebar-component > div.tab-content-component:last-child > div.tab-container-component:first-child > div.quick-analysis-component.quick-analysis-narrow-sidebar.quick-analysis-with-game-review-popup:nth-child(3) > div.quick-analysis-results > div.quick-analysis-buttons:last-child > div.quick-analysis-review:first-child > div.game-review-overlay-overlay:first-child
+youtube.com###clarify-box > ytd-clarification-renderer.style-scope.ytd-watch-flexy
+@@||api.penpencil.xyz^$stealth
+youtube.com###contents > ytd-rich-section-renderer.style-scope.ytd-rich-grid-renderer:nth-child(3)
+youtube.com###items > ytd-mini-guide-entry-renderer.style-scope.ytd-mini-guide-renderer:nth-child(3)
+@@||dood.*^$stealth
+apkonline.net###parenthomexx
+apkonline.net###guac-menu
+open.spotify.com###main > div.Root.encore-dark-theme > div.Root__top-container:nth-child(2) > nav.Root__nav-bar:nth-child(2) > div.tUwyjggD2n5KvEtP5z1B:first-child > div.Foyk_HJx16yh22JYmQ56:last-child > div.eNs6P3JYpf2LScgTDHc6.WvLkmOVB2R2vzI2ibR_r:first-child > a.link-subtle.ATUzFKub89lzvkmvhpyE
+open.spotify.com###main > div.Root.encore-dark-theme > div.Root__top-container:nth-child(2) > div.Root__top-bar:first-child > header.facDIsOQo9q7kiWc4jSg:first-child > button.Button-y0gtbx-0.jjUWAm.Upqw01TOXETOmR5Td7Dj:nth-child(4)
+open.spotify.com###main > div.Root.encore-dark-theme > div.Root__top-container:nth-child(2) > div.Root__now-playing-bar:nth-child(3) > footer.GD2gbRtcs5dOjMGAM_Y4 > div.dz_h98rH9nZCwfPdnKgr:first-child
+! Reddit.com
+www.reddit.com##.icon-campaign.icon:upward(1)
+www.reddit.com##h2:has(> a[href="/subreddits/leaderboard/"]):upward(3) www.reddit.com##div.HomeAds:upward(3)
+www.reddit.com##.icon.icon-premium_fill:upward(5)
+www.reddit.com##div[style="max-height:none"] > div:has-text(Reddit Inc © 2022. All rights reserved):upward(4)
+www.reddit.com##.icon-mod.icon:upward(1)
+www.reddit.com##h2:has-text(Powerup r/):upward(3)
+www.reddit.com##h2:has-text(Powerup to unlock perks for r/):upward(5)
+@@||livetv.unblckd.pw^$important,document
+@@||www.resso.com^$important,document
+@@||adblock-tester.com^$important,document
+@@||d3ward.github.io^$important,document
+@@||test.amiunique.org^$important,document
+@@||dropgalaxy.com^$important,document
+||*/beacon/*
+
 
 
 
