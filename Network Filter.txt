@@ -21,8 +21,6 @@
 ||*^$ping
 $removeparam=ved,domain=google.*
 $removeparam=bp,domain=youtube.com
-! search.brave.com
-$removeparam=source,domain=search.brave.com
 
 ! ecosia.org
 $removeparam=tt
@@ -203,8 +201,6 @@ dashboard.honeygain.com##.kYShXQ.sc-iELTvK
 
 ! search.brave.com
 $removeparam=source,domain=search.brave.com
-$removeparam=is_fallback_api_available
-$removeparam=origin
 
 ! ecosia.org
 $removeparam=tt
