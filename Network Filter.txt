@@ -268,8 +268,6 @@ fast.com##.powered-by-container
 
 ! search.brave.com
 $removeparam=source,domain=search.brave.com
-$removeparam=is_fallback_api_available
-$removeparam=origin
 
 ! ecosia.org
 $removeparam=tt
